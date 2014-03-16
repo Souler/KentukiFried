@@ -68,7 +68,7 @@ public class KentukiRosterFrame extends KentukiTemplateFrame
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	protected void initialize() {
 		this.setName("Roster");
 		this.setTitle("Kentuki Fried Roster");
 		this.setBounds(100, 100, 404, 587);
@@ -330,5 +330,9 @@ public class KentukiRosterFrame extends KentukiTemplateFrame
 				});
 			}
 		}
+		
+		// Llamamos al inicializar de la clase superior para que se encargue
+		// de cargar los valores almacenados en la cofing.
+		super.initialize();
 	}
 }

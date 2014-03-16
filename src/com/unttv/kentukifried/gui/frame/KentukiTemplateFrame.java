@@ -185,8 +185,26 @@ public class KentukiTemplateFrame extends JFrame
 		
 		for (Component c : getAllComponents())
 			if (c instanceof KentukiTemplateComponent)
-				if (prop.containsKey(this.getName() + '.' +((KentukiTemplateComponent) c).getTemplateVarValue()))
-					((KentukiTemplateComponent) c).setTemplateVarValue(prop.getProperty(this.getName() + '.' +((KentukiTemplateComponent) c).getTemplateVarValue()));
+				if (prop.containsKey(this.getName() + '.' +((KentukiTemplateComponent) c).getTemplateVarName()))
+					((KentukiTemplateComponent) c).setTemplateVarValue(prop.getProperty(this.getName() + '.' +((KentukiTemplateComponent) c).getTemplateVarName()));
+	}
+	
+	/**
+	 * Metodo de inicializacion del formulario.
+	 * Se le debe llamar al final del metodo de inicializacion de todas las clases
+	 * que extiendan de esta para que cargue los valores almacenados en la config
+	 * para dicho formulario
+	 */
+	protected void initialize()
+	{
+		  try
+		  {
+			  loadFormDataFromFile("config.ini");
+		  }
+		  catch (IOException e1)
+		  {
+			showErrorMessageBox("No se pudo cargar la configuracion guardada");
+		  }
 	}
 	
 	/**

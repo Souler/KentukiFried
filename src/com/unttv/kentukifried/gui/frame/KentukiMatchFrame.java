@@ -56,7 +56,7 @@ public class KentukiMatchFrame extends KentukiTemplateFrame
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize()
+	protected void initialize()
 	{
 		this.setName("Matcher");
 		this.setTitle("Kentuki Fried Matcher");
@@ -270,6 +270,10 @@ public class KentukiMatchFrame extends KentukiTemplateFrame
 				});
 			}
 		}
+		
+		// Llamamos al inicializar de la clase superior para que se encargue
+		// de cargar los valores almacenados en la cofing.
+		super.initialize();
 	}
 	
 }
