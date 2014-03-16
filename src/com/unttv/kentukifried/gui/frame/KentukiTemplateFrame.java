@@ -152,6 +152,12 @@ public class KentukiTemplateFrame extends JFrame
 	{
 		Properties prop = new Properties();
 		
+		// Primero cargamos las opciones que hubiera guardadas
+		// ya que usamos un archivo unico para guardar las config de
+		// los distintos frames.
+		InputStream input = new FileInputStream(filename);
+		prop.load(input);
+		
 		for (Component c : getAllComponents())
 			if (c instanceof KentukiTemplateComponent)
 				if (c != null)
