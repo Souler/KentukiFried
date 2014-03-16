@@ -69,7 +69,8 @@ public class KentukiRosterFrame extends KentukiTemplateFrame
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		this.setTitle("Roster setter");
+		this.setName("Roster");
+		this.setTitle("Kentuki Fried Roster");
 		this.setBounds(100, 100, 404, 587);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().setLayout(null);
